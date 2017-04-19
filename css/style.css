@@ -1,8 +1,8 @@
 .container {
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
-  background-color: lightgrey;
-  height: 90vh;
+  background-color: white;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
 .center-col {
@@ -16,6 +16,11 @@
           justify-content: center;
 }
 
+.shadow {
+  padding: calc(2rem / 2);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
 img {
   max-width: 100%;
 }
@@ -23,13 +28,12 @@ img {
 .row {
   min-height: 20px;
   width: 100%;
-  padding: 0 calc(2em / 6);
-  background-color: white;
+  padding: 0 calc(2rem / 6);
 }
 
 .float-left {
   float: left;
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 .float-right {
@@ -51,8 +55,7 @@ img {
   width: 100%;
   float: left;
   overflow: hidden;
-  padding: calc(2em / 1.2);
-  background-color: lightgrey;
+  padding: calc(2rem / 1.2);
 }
 
 .s-12 {
@@ -105,11 +108,16 @@ img {
 
 @media screen and (min-width: 640px) {
   .row {
-    padding: 0 calc(2em / 1.5);
+    padding: 0 calc(2rem / 1.5);
   }
 
   .col {
-    padding: calc(2em / 1.1);
+    padding: calc(2rem / 1.1);
+  }
+
+  .shadow {
+    padding: calc(2rem / 1.5);
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
   }
 
   .m-12 {
@@ -162,11 +170,11 @@ img {
 }
 @media screen and (min-width: 960px) {
   .row {
-    padding: 0 2em;
+    padding: 0 2rem;
   }
 
   .col {
-    padding: 2em;
+    padding: 2rem;
   }
 
   .l-12 {
@@ -236,7 +244,7 @@ h5,
 h6 {
   color: inherit;
   font-weight: bold;
-  margin-bottom: calc(0.5em / 2);
+  margin-bottom: calc(0.5rem / 2);
 }
 
 p {
@@ -248,6 +256,57 @@ p {
   text-align: center;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1.05rem;
+}
+
+h6 {
+  font-size: 1.005rem;
+}
+
+@media screen and (min-width: 640px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;

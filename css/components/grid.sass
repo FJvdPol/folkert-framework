@@ -1,18 +1,20 @@
 .container
-    max-width: 960px
+    max-width: 1080px
     margin: 0 auto
-    background-color: lightgrey
-    height: 90vh
+    background-color: white
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)
 .center-col
     display: flex
     justify-content: center
+.shadow
+    padding: calc(#{$padding} / 2)
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)
 img
     max-width: 100%
 .row
     min-height: 20px
     width: 100%
     padding: 0 calc(#{$padding} / 6)
-    background-color: white
 // added a clearfix for floating elements
 .float-left
     float: left
@@ -33,7 +35,6 @@ img
     float: left
     overflow: hidden
     padding: calc(#{$padding} / 1.2)
-    background-color: lightgrey
 .s-12
     width: 100%
 .s-11
@@ -63,6 +64,9 @@ img
         padding: 0 calc(#{$padding} / 1.5)
     .col
         padding: calc(#{$padding} / 1.1)
+    .shadow
+        padding: calc(#{$padding} / 1.5)
+        box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)
     .m-12
         width: 100%
     .m-11
