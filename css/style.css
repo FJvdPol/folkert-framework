@@ -1,12 +1,37 @@
 .container {
   max-width: 960px;
   margin: 0 auto;
-  background-color: grey;
+  background-color: lightgrey;
   height: 90vh;
 }
 
+.flex-center-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+img {
+  max-width: 100%;
+}
+
 .row {
+  min-height: 20px;
   width: 100%;
+}
+
+.float-left {
+  float: left;
+  margin-right: 0.5em;
+}
+
+.float-right {
+  float: right;
 }
 
 .clearfix::before, .clearfix::after,
@@ -21,13 +46,15 @@
 }
 
 .col {
+  width: 100%;
   float: left;
-  height: 50px;
-  padding: 10px;
-  border: 3px solid white;
   overflow: hidden;
 }
-.col.center {
+.col.center-content .col-margin {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,136 +64,195 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.col:last-child {
-  float: right;
+
+.col-margin {
+  margin: calc(0.5em / 2);
+  padding: 2em;
+  background-color: white;
 }
 
 .s-12 {
   width: 100%;
-  background-color: blue;
 }
 
 .s-11 {
   width: calc(100%/12*11);
-  background-color: darkgrey;
 }
 
 .s-10 {
   width: calc(100%/12*10);
-  background-color: green;
 }
 
 .s-9 {
   width: calc(100%/12*9);
-  background-color: purple;
 }
 
 .s-8 {
   width: calc(100%/12*8);
-  background-color: goldenrod;
 }
 
 .s-7 {
   width: calc(100%/12*7);
-  background-color: lightgreen;
 }
 
 .s-6 {
   width: calc(100%/12*6);
-  background-color: red;
 }
 
 .s-5 {
   width: calc(100%/12*5);
-  background-color: crimson;
 }
 
 .s-4 {
   width: calc(100%/12*4);
-  background-color: pink;
 }
 
 .s-3 {
   width: calc(100%/12*3);
-  background-color: lightblue;
 }
 
 .s-2 {
   width: calc(100%/12*2);
-  background-color: cyan;
 }
 
 .s-1 {
   width: calc(100%/12*1);
-  background-color: darkgreen;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 640px) {
+  .col-margin {
+    margin: 0.5em;
+  }
+
   .m-12 {
     width: 100%;
-    background-color: blue;
   }
 
   .m-11 {
     width: calc(100%/12*11);
-    background-color: darkgrey;
   }
 
   .m-10 {
     width: calc(100%/12*10);
-    background-color: green;
   }
 
   .m-9 {
     width: calc(100%/12*9);
-    background-color: purple;
   }
 
   .m-8 {
     width: calc(100%/12*8);
-    background-color: goldenrod;
   }
 
   .m-7 {
     width: calc(100%/12*7);
-    background-color: lightgreen;
   }
 
   .m-6 {
     width: calc(100%/12*6);
-    background-color: red;
   }
 
   .m-5 {
     width: calc(100%/12*5);
-    background-color: crimson;
   }
 
   .m-4 {
     width: calc(100%/12*4);
-    background-color: pink;
   }
 
   .m-3 {
     width: calc(100%/12*3);
-    background-color: lightblue;
   }
 
   .m-2 {
     width: calc(100%/12*2);
-    background-color: cyan;
   }
 
   .m-1 {
     width: calc(100%/12*1);
-    background-color: darkgreen;
   }
 }
+@media screen and (min-width: 320px) {
+  .l-12 {
+    width: 100%;
+  }
+
+  .l-11 {
+    width: calc(100%/12*11);
+  }
+
+  .l-10 {
+    width: calc(100%/12*10);
+  }
+
+  .l-9 {
+    width: calc(100%/12*9);
+  }
+
+  .l-8 {
+    width: calc(100%/12*8);
+  }
+
+  .l-7 {
+    width: calc(100%/12*7);
+  }
+
+  .l-6 {
+    width: calc(100%/12*6);
+  }
+
+  .l-5 {
+    width: calc(100%/12*5);
+  }
+
+  .l-4 {
+    width: calc(100%/12*4);
+  }
+
+  .l-3 {
+    width: calc(100%/12*3);
+  }
+
+  .l-2 {
+    width: calc(100%/12*2);
+  }
+
+  .l-1 {
+    width: calc(100%/12*1);
+  }
+}
+body {
+  font-family: Roboto, Arial, sans-serif;
+  color: black;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: inherit;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.center-text {
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
-  color: black;
+  padding: calc(2em / 2);
+  background-color: crimson;
 }

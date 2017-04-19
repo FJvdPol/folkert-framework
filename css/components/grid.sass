@@ -1,11 +1,22 @@
 .container
     max-width: 960px
     margin: 0 auto
-    background-color: grey
+    background-color: lightgrey
     height: 90vh
+.flex-center-content
+    display: flex
+    justify-content: center
+img
+    max-width: 100%
 .row
+    min-height: 20px
     width: 100%
 // added a clearfix for floating elements
+.float-left
+    float: left
+    margin-right: $margin
+.float-right
+    float: right
 .clearfix,
 .row
     &::before,
@@ -16,87 +27,91 @@
         clear: both
 .col
     // instead of using flexbox i decided to use float for the grid system. This way i can easily apply display styles without disrupting the grid.
+    width: 100%
     float: left
-    height: 50px
-    padding: 10px
-    border: 3px solid white
     overflow: hidden
-    &.center
-        display: flex
-        justify-content: center
-    &:last-child
-        float: right
+    &.center-content
+        .col-margin
+            flex-grow: 1
+            display: flex
+            justify-content: center
+.col-margin
+    margin: calc(#{$margin} / 2)
+    padding: $padding
+    background-color: white
 .s-12
     width: 100%
-    background-color: blue
 .s-11
     width: calc(100%/12*11)
-    background-color: darkgrey
 .s-10
     width: calc(100%/12*10)
-    background-color: green
 .s-9
     width: calc(100%/12*9)
-    background-color: purple
 .s-8
     width: calc(100%/12*8)
-    background-color: goldenrod
 .s-7
     width: calc(100%/12*7)
-    background-color: lightgreen
 .s-6
     width: calc(100%/12*6)
-    background-color: red
 .s-5
     width: calc(100%/12*5)
-    background-color: crimson
 .s-4
     width: calc(100%/12*4)
-    background-color: pink
 .s-3
     width: calc(100%/12*3)
-    background-color: lightblue
 .s-2
     width: calc(100%/12*2)
-    background-color: cyan
 .s-1
     width: calc(100%/12*1)
-    background-color: darkgreen
-
-@media screen and (min-width: 40em)
+@media screen and (min-width: 640px)
+    .col-margin
+        margin: $margin
     .m-12
         width: 100%
-        background-color: blue
     .m-11
         width: calc(100%/12*11)
-        background-color: darkgrey
     .m-10
         width: calc(100%/12*10)
-        background-color: green
     .m-9
         width: calc(100%/12*9)
-        background-color: purple
     .m-8
         width: calc(100%/12*8)
-        background-color: goldenrod
     .m-7
         width: calc(100%/12*7)
-        background-color: lightgreen
     .m-6
         width: calc(100%/12*6)
-        background-color: red
     .m-5
         width: calc(100%/12*5)
-        background-color: crimson
     .m-4
         width: calc(100%/12*4)
-        background-color: pink
     .m-3
         width: calc(100%/12*3)
-        background-color: lightblue
     .m-2
         width: calc(100%/12*2)
-        background-color: cyan
     .m-1
         width: calc(100%/12*1)
-        background-color: darkgreen
+@media screen and (min-width: 320px)
+    .l-12
+        width: 100%
+    .l-11
+        width: calc(100%/12*11)
+    .l-10
+        width: calc(100%/12*10)
+    .l-9
+        width: calc(100%/12*9)
+    .l-8
+        width: calc(100%/12*8)
+    .l-7
+        width: calc(100%/12*7)
+    .l-6
+        width: calc(100%/12*6)
+    .l-5
+        width: calc(100%/12*5)
+    .l-4
+        width: calc(100%/12*4)
+    .l-3
+        width: calc(100%/12*3)
+    .l-2
+        width: calc(100%/12*2)
+    .l-1
+        width: calc(100%/12*1)
