@@ -14,58 +14,89 @@
         content: ""
     &::after
         clear: both
-.col-12,
-.col-11,
-.col-10,
-.col-9,
-.col-8,
-.col-7,
-.col-6,
-.col-5,
-.col-4,
-.col-3,
-.col-2,
-.col-1
+.col
     // instead of using flexbox i decided to use float for the grid system. This way i can easily apply display styles without disrupting the grid.
     float: left
     height: 50px
     padding: 10px
+    border: 3px solid white
+    overflow: hidden
     &.center
         display: flex
         justify-content: center
-.col-12
+    &:last-child
+        float: right
+.s-12
     width: 100%
     background-color: blue
-.col-11
+.s-11
     width: calc(100%/12*11)
-    background-color: black
-.col-10
+    background-color: darkgrey
+.s-10
     width: calc(100%/12*10)
     background-color: green
-.col-9
+.s-9
     width: calc(100%/12*9)
     background-color: purple
-.col-8
+.s-8
     width: calc(100%/12*8)
     background-color: goldenrod
-.col-7
+.s-7
     width: calc(100%/12*7)
     background-color: lightgreen
-.col-6
+.s-6
     width: calc(100%/12*6)
     background-color: red
-.col-5
+.s-5
     width: calc(100%/12*5)
     background-color: crimson
-.col-4
+.s-4
     width: calc(100%/12*4)
     background-color: pink
-.col-3
+.s-3
     width: calc(100%/12*3)
     background-color: lightblue
-.col-2
+.s-2
     width: calc(100%/12*2)
     background-color: cyan
-.col-1
+.s-1
     width: calc(100%/12*1)
     background-color: darkgreen
+
+@media screen and (min-width: 40em)
+    .m-12
+        width: 100%
+        background-color: blue
+    .m-11
+        width: calc(100%/12*11)
+        background-color: darkgrey
+    .m-10
+        width: calc(100%/12*10)
+        background-color: green
+    .m-9
+        width: calc(100%/12*9)
+        background-color: purple
+    .m-8
+        width: calc(100%/12*8)
+        background-color: goldenrod
+    .m-7
+        width: calc(100%/12*7)
+        background-color: lightgreen
+    .m-6
+        width: calc(100%/12*6)
+        background-color: red
+    .m-5
+        width: calc(100%/12*5)
+        background-color: crimson
+    .m-4
+        width: calc(100%/12*4)
+        background-color: pink
+    .m-3
+        width: calc(100%/12*3)
+        background-color: lightblue
+    .m-2
+        width: calc(100%/12*2)
+        background-color: cyan
+    .m-1
+        width: calc(100%/12*1)
+        background-color: darkgreen
