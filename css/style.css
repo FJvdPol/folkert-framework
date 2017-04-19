@@ -5,7 +5,7 @@
   height: 90vh;
 }
 
-.flex-center-content {
+.center-col {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,6 +23,8 @@ img {
 .row {
   min-height: 20px;
   width: 100%;
+  padding: 0 calc(2em / 6);
+  background-color: white;
 }
 
 .float-left {
@@ -49,26 +51,8 @@ img {
   width: 100%;
   float: left;
   overflow: hidden;
-}
-.col.center-content .col-margin {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.col-margin {
-  margin: calc(0.5em / 2);
-  padding: 2em;
-  background-color: white;
+  padding: calc(2em / 1.2);
+  background-color: lightgrey;
 }
 
 .s-12 {
@@ -120,8 +104,12 @@ img {
 }
 
 @media screen and (min-width: 640px) {
-  .col-margin {
-    margin: 0.5em;
+  .row {
+    padding: 0 calc(2em / 1.5);
+  }
+
+  .col {
+    padding: calc(2em / 1.1);
   }
 
   .m-12 {
@@ -172,7 +160,15 @@ img {
     width: calc(100%/12*1);
   }
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 960px) {
+  .row {
+    padding: 0 2em;
+  }
+
+  .col {
+    padding: 2em;
+  }
+
   .l-12 {
     width: 100%;
   }
@@ -221,8 +217,13 @@ img {
     width: calc(100%/12*1);
   }
 }
+@media screen and (max-width: 300px) {
+  .col {
+    width: 100%;
+  }
+}
 body {
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   color: black;
   font-size: 16px;
 }
@@ -233,14 +234,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: inherit;
   font-weight: bold;
+  margin-bottom: calc(0.5em / 2);
 }
 
 p {
   font-size: 1em;
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 
 .center-text {
@@ -253,6 +254,5 @@ p {
 }
 
 body {
-  padding: calc(2em / 2);
   background-color: crimson;
 }
