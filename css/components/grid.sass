@@ -1,7 +1,6 @@
 .container
-    max-width: 1080px
+    max-width: $container-width
     margin: 0 auto
-    background-color: white
     box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)
 .center-col
     display: flex
@@ -59,7 +58,7 @@ img
     width: calc(100%/12*2)
 .s-1
     width: calc(100%/12*1)
-@media screen and (min-width: 640px)
+@media screen and (min-width: $medium)
     .row
         padding: 0 calc(#{$padding} / 1.5)
     .col
@@ -91,7 +90,7 @@ img
         width: calc(100%/12*2)
     .m-1
         width: calc(100%/12*1)
-@media screen and (min-width: 960px)
+@media screen and (min-width: $large)
     .row
         padding: 0 $padding
     .col
@@ -120,6 +119,6 @@ img
         width: calc(100%/12*2)
     .l-1
         width: calc(100%/12*1)
-@media screen and (max-width: 300px)
+@media screen and (max-width: $min)
     .col
         width: 100%

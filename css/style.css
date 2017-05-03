@@ -1,7 +1,14 @@
+/* ---------- Default font size of the whole page (declares what 1rem is) ---------- */
+/* ---------- Default margin and padding for most elements ---------- */
+/* ---------- Default body background-color ---------- */
+/* ---------- Default container width ---------- */
+/* ---------- Size of responsive Grid Media Queries: ---------- */
+/* everything below the value of $medium = small */
+/* value of $min decides under what value everything should be full screen width */
+/* ---------- Remove any files you don't want to use ---------- */
 .container {
   max-width: 1080px;
   margin: 0 auto;
-  background-color: white;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
