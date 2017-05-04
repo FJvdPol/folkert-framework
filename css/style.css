@@ -1,4 +1,4 @@
-/* ---------- Default font size of the whole page (declares what 1rem is) ---------- */
+/* ---------- Default font properties of the whole page (declares what 1rem is) ---------- */
 /* ---------- Default margin and padding for most elements ---------- */
 /* ---------- Default body background-color ---------- */
 /* ---------- Default container width ---------- */
@@ -219,7 +219,7 @@ img {
   }
 }
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Roboto, Helvetica, Arial, sans-serif;
   color: #000;
   font-size: 16px;
 }
@@ -330,6 +330,49 @@ li a {
 }
 .inline-nav ul li {
   margin: 0 0.5rem;
+}
+
+button,
+.button,
+a.button {
+  appearance: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0.5em 1.25em;
+  -webkit-transition: all 250ms ease-in-out;
+          transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+button.material,
+.button.material,
+a.button.material {
+  padding: 0.75em 2em;
+  border-radius: 3px;
+  box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
+  background-color: #2196F3;
+  color: white;
+}
+button.material:hover,
+.button.material:hover,
+a.button.material:hover {
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+  box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.25);
+}
+button.material.round,
+.button.material.round,
+a.button.material.round {
+  border-radius: 50px;
+}
+button.material.round.to-straight:hover,
+.button.material.round.to-straight:hover,
+a.button.material.round.to-straight:hover {
+  border-radius: 3px;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
 }
 
 * {
