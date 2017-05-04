@@ -1,6 +1,6 @@
 body
     font-family: Roboto, Helvetica, Arial, sans-serif
-    color: black
+    color: $text-color
     font-size: $font-size
 h1,
 h2,
@@ -10,12 +10,7 @@ h5,
 h6
     color: inherit
     font-weight: bold
-    margin-bottom: calc(#{$margin} / 2)
-p
-    font-size: 1em
-    font-weight: normal
-.center-text
-    text-align: center
+    margin: $margin
 h1
     font-size: 2.5rem
 h2
@@ -43,3 +38,23 @@ h6
         font-size: 1.2rem
     h6
         font-size: 1.1rem
+p,
+a
+    margin: $margin
+p
+    font-size: 1em
+    font-weight: normal
+.center-text
+    text-align: center
+a,
+a:visited
+    color: $text-color
+a:hover
+    color: lighten($text-color, 30)
+li
+    a
+        text-decoration: none
+.underline
+    li
+        a
+            text-decoration: underline

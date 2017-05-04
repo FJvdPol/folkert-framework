@@ -3,7 +3,7 @@ body {
 }
 .row {
     padding-bottom: 7rem;
-    border-bottom: 1px solid lightgrey;
+    /*border-bottom: 1px solid lightgrey;*/
 }
 .row:first-child{
     margin: 0;
@@ -11,4 +11,7 @@ body {
 }
 .container{
     background-color: white;
+}
+.inline-nav {
+    background-color: lightgrey;
 }
