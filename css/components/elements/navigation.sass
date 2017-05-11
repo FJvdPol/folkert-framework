@@ -1,8 +1,70 @@
-.inline-nav
+header
+    overflow: hidden
+.#{$nav--prefix}#{$nav--responsive-sidebar},
+.#{$nav--prefix}#{$nav--inline-list}
     padding: $padding
     ul
         list-style-type: none
         padding: 0
         display: flex
+        flex-wrap: wrap
         li
             margin: 0 $margin
+##{$nav--prefix}#{$nav--responsive-sidebar-toggle},
+##{$nav--prefix}#{$nav--responsive-sidebar-toggle-icon}
+    display: none
+    font-size: 30px
+    font-weight: bold
+    margin: $margin
+    position: absolute
+
+@media screen and (max-width: $screen--small)
+    .#{$nav--prefix}#{$nav--responsive-sidebar},
+    .#{$nav--prefix}#{$nav--inline-list}
+        ul
+            li
+                flex-basis: 100%
+                text-align: center
+                margin: $margin
+    .#{$nav--prefix}#{$nav--responsive-sidebar},
+        background-color: white
+        position: fixed
+        top: 0
+        left: 0
+        height: 100vh
+        width: 90%
+        transform: translateX(-100%)
+        z-index: 2
+        pointer-events: none
+        opacity: 0
+        transition: transform 250ms ease-out
+
+        ul
+            margin-top: 20%
+            li
+                margin: calc(#{$margin} * 3)
+        &::after
+            position: fixed
+            top: 0
+            left: 100%
+            width: 200%
+            height: 100%
+            content: " "
+            background-color: rgba(0,0,0,0.2)
+            z-index: 1
+            opacity: 0
+            pointer-events: none
+            transition: all 250ms ease-out
+    ##{$nav--prefix}#{$nav--responsive-sidebar-toggle-icon}
+        display: block
+        z-index: 4
+    ##{$nav--prefix}#{$nav--responsive-sidebar-toggle}
+        &:checked + .#{$grid--prefix}#{$grid--wrapper}
+            height: 100vh
+            overflow: hidden
+            .#{$nav--prefix}#{$nav--responsive-sidebar}
+                transform: translateX(0)
+                pointer-events: all
+                opacity: 1
+                &::after
+                    opacity: 1

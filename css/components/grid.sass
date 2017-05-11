@@ -1,5 +1,8 @@
-.container
-    max-width: $container-width
+*
+    box-sizing: border-box
+    margin: 0
+.#{$grid--prefix}#{$grid--wrapper}
+    max-width: $grid--wrapper-width
     margin: 0 auto
     box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.3)
 .center-col
@@ -7,7 +10,7 @@
     justify-content: center
 img
     max-width: 100%
-.row
+.#{$grid--prefix}#{$grid--row}
     min-height: 20px
     width: 100%
     padding: 0 calc(#{$padding} / 6)
@@ -18,14 +21,14 @@ img
 .float-right
     float: right
 .clearfix,
-.row
+.#{$grid--prefix}#{$grid--row}
     &::before,
     &::after
         display: table
         content: ""
     &::after
         clear: both
-.col
+.#{$grid--prefix}#{$grid--col}
     // instead of using flexbox i decided to use float for the grid system. This way i can easily apply display styles without disrupting the grid.
     width: 100%
     float: left
@@ -54,11 +57,9 @@ img
     width: calc(100%/12*2)
 .s-1
     width: calc(100%/12*1)
-@media screen and (min-width: $medium)
-    .row
+@media screen and (min-width: $screen--medium)
+    .#{$grid--prefix}#{$grid--row}
         padding: 0 calc(#{$padding} / 1.5)
-    .col
-        //padding: calc(#{$padding} / 1.1)
     .m-12
         width: 100%
     .m-11
@@ -83,11 +84,9 @@ img
         width: calc(100%/12*2)
     .m-1
         width: calc(100%/12*1)
-@media screen and (min-width: $large)
-    .row
+@media screen and (min-width: $screen--large)
+    .#{$grid--prefix}#{$grid--row}
         padding: 0 $padding
-    .col
-        //padding: $padding
     .l-12
         width: 100%
     .l-11
@@ -112,6 +111,6 @@ img
         width: calc(100%/12*2)
     .l-1
         width: calc(100%/12*1)
-@media screen and (max-width: $min)
-    .col
+@media screen and (max-width: $screen--min)
+    .#{$grid--prefix}#{$grid--col}
         width: 100%

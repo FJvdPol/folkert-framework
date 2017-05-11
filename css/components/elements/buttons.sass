@@ -6,9 +6,11 @@ a.button
     outline: none
     font-size: $font-size
     padding: 0.5em 1.25em
+    margin: $margin
     transition: all 250ms ease-in-out
     cursor: pointer
-    &.material
+    text-align: center
+    &.button--material
         padding: 0.75em 2em
         border-radius: 3px
         box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.3)
@@ -17,9 +19,18 @@ a.button
         &:hover
             transform: translateY(-1px)
             box-shadow: 0px 4px 3px -1px rgba(0,0,0,0.25)
-        &.round
+        &.button--round
             border-radius: 50px
-            &.to-straight
+            &.button--to-straight
                 &:hover
                     border-radius: 3px
                     transform: none
+@media screen and (max-width: $screen--small)
+    button,
+    .button,
+    a.button
+        display: block
+        margin: $margin auto
+        &.button--material
+            &.button--round
+                border-radius: 25px

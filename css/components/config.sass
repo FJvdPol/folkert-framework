@@ -1,30 +1,58 @@
-/* ---------- Default font properties of the whole page (declares what 1rem is) ---------- */
+// Default font properties of the whole page (declares what 1rem is)
 $font: Roboto
 $font-size: 16px
 $text-color: #000
-/* ---------- Default margin and padding for most elements ---------- */
+// Default margin and padding for most elements
 $margin: 0.5rem
 $padding: 2rem
 
-/* ---------- Default body background-color ---------- */
+// Default body background-color
 $background-color: crimson
 
-/* ---------- Default container width ---------- */
-$container-width: 1080px
-/* ---------- Size of responsive Grid Media Queries: ---------- */
-/* everything below the value of $medium = small
-/* value of $min decides under what value everything should be full screen width
-$min: 300px
-$medium: 640px
-$large: 960px
+
+// Size of responsive Grid Media Queries:
+// everything below the value of $medium = small
+// value of $min decides under what value everything should be full screen width
+$screen--min: 300px
+$screen--small: 360px
+$screen--medium: 640px
+$screen--large: 960px
 
 
 
 
 
+// Selector names ==========================================================================
+// Here you can change the names of the selectors
+// =======================================================================================
 
-/* ---------- Remove any files you don't want to use ---------- */
+// Grid selectors ----------------------------------------------------------------------------
+$grid--prefix: "grid--"
+$grid--row: "row"
+$grid--col: "col"
+//these three default to: grid--row and grid--col
+
+// Wrapper - defines max-width of element that it is applied to
+$grid--wrapper: "wrapper"
+// defaults to: grid--wrapper
+
+// Default container width
+$grid--wrapper-width: 1080px
+
+// Nav selectors --------------------------------------------------------------------------
+$nav--prefix: "nav--"
+$nav--inline-list: "inline"
+$nav--responsive-sidebar: "responsive-sidebar"
+$nav--responsive-sidebar-toggle: "toggle"
+$nav--responsive-sidebar-toggle-icon: "toggle-icon"
+
+
+
+// Files ===================================================================================
+// Remove any files you don't want to use
+// =======================================================================================
 @import grid
 @import typography
 @import elements/navigation
 @import elements/buttons
+@import elements/forms

@@ -1,12 +1,9 @@
-/* ---------- Default font properties of the whole page (declares what 1rem is) ---------- */
-/* ---------- Default margin and padding for most elements ---------- */
-/* ---------- Default body background-color ---------- */
-/* ---------- Default container width ---------- */
-/* ---------- Size of responsive Grid Media Queries: ---------- */
-/* everything below the value of $medium = small */
-/* value of $min decides under what value everything should be full screen width */
-/* ---------- Remove any files you don't want to use ---------- */
-.container {
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.grid--wrapper {
   max-width: 1080px;
   margin: 0 auto;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
@@ -27,7 +24,7 @@ img {
   max-width: 100%;
 }
 
-.row {
+.grid--row {
   min-height: 20px;
   width: 100%;
   padding: 0 calc(2rem / 6);
@@ -42,18 +39,15 @@ img {
   float: right;
 }
 
-.clearfix::before, .clearfix::after,
-.row::before,
-.row::after {
+.clearfix::before, .clearfix::after {
   display: table;
   content: "";
 }
-.clearfix::after,
-.row::after {
+.clearfix::after {
   clear: both;
 }
 
-.col {
+.grid--col {
   width: 100%;
   float: left;
   overflow: hidden;
@@ -108,7 +102,7 @@ img {
 }
 
 @media screen and (min-width: 640px) {
-  .row {
+  .grid--row {
     padding: 0 calc(2rem / 1.5);
   }
 
@@ -161,7 +155,7 @@ img {
   }
 }
 @media screen and (min-width: 960px) {
-  .row {
+  .grid--row {
     padding: 0 2rem;
   }
 
@@ -214,7 +208,7 @@ img {
   }
 }
 @media screen and (max-width: 300px) {
-  .col {
+  .grid--col {
     width: 100%;
   }
 }
@@ -289,10 +283,7 @@ h6 {
 p,
 a {
   margin: 0.5rem;
-}
-
-p {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: normal;
 }
 
@@ -317,21 +308,112 @@ li a {
   text-decoration: underline;
 }
 
-.inline-nav {
+@media screen and (max-width: 360px) {
+  h1 {
+    text-align: center;
+  }
+}
+header {
+  overflow: hidden;
+}
+
+.nav--responsive-sidebar,
+.nav--inline {
   padding: 2rem;
 }
-.inline-nav ul {
+.nav--responsive-sidebar ul,
+.nav--inline ul {
   list-style-type: none;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
-.inline-nav ul li {
+.nav--responsive-sidebar ul li,
+.nav--inline ul li {
   margin: 0 0.5rem;
 }
 
+#nav--toggle,
+#nav--toggle-icon {
+  display: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0.5rem;
+  position: absolute;
+}
+
+@media screen and (max-width: 360px) {
+  .nav--responsive-sidebar ul li,
+  .nav--inline ul li {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    text-align: center;
+    margin: 0.5rem;
+  }
+
+  .nav--responsive-sidebar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 90%;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 250ms ease-out;
+            transition: transform 250ms ease-out;
+  }
+  .nav--responsive-sidebar ul {
+    margin-top: 20%;
+  }
+  .nav--responsive-sidebar ul li {
+    margin: calc(0.5rem * 3);
+  }
+  .nav--responsive-sidebar::after {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 200%;
+    height: 100%;
+    content: " ";
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 250ms ease-out;
+            transition: all 250ms ease-out;
+  }
+
+  #nav--toggle-icon {
+    display: block;
+    z-index: 4;
+  }
+
+  #nav--toggle:checked + .grid--wrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+  #nav--toggle:checked + .grid--wrapper .nav--responsive-sidebar {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    pointer-events: all;
+    opacity: 1;
+  }
+  #nav--toggle:checked + .grid--wrapper .nav--responsive-sidebar::after {
+    opacity: 1;
+  }
+}
 button,
 .button,
 a.button {
@@ -340,46 +422,57 @@ a.button {
   outline: none;
   font-size: 16px;
   padding: 0.5em 1.25em;
+  margin: 0.5rem;
   -webkit-transition: all 250ms ease-in-out;
           transition: all 250ms ease-in-out;
   cursor: pointer;
+  text-align: center;
 }
-button.material,
-.button.material,
-a.button.material {
+button.button--material,
+.button.button--material,
+a.button.button--material {
   padding: 0.75em 2em;
   border-radius: 3px;
   box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
   background-color: #2196F3;
   color: white;
 }
-button.material:hover,
-.button.material:hover,
-a.button.material:hover {
+button.button--material:hover,
+.button.button--material:hover,
+a.button.button--material:hover {
   -webkit-transform: translateY(-1px);
       -ms-transform: translateY(-1px);
           transform: translateY(-1px);
   box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.25);
 }
-button.material.round,
-.button.material.round,
-a.button.material.round {
+button.button--material.button--round,
+.button.button--material.button--round,
+a.button.button--material.button--round {
   border-radius: 50px;
 }
-button.material.round.to-straight:hover,
-.button.material.round.to-straight:hover,
-a.button.material.round.to-straight:hover {
+button.button--material.button--round.button--to-straight:hover,
+.button.button--material.button--round.button--to-straight:hover,
+a.button.button--material.button--round.button--to-straight:hover {
   border-radius: 3px;
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
+@media screen and (max-width: 360px) {
+  button,
+  .button,
+  a.button {
+    display: block;
+    margin: 0.5rem auto;
+  }
+  button.button--material.button--round,
+  .button.button--material.button--round,
+  a.button.button--material.button--round {
+    border-radius: 25px;
+  }
 }
-
-body {
-  background-color: crimson;
+.form--center input {
+  display: block;
+  margin: 0 auto;
 }

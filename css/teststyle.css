@@ -1,17 +1,16 @@
 body {
     background-color: goldenrod;
 }
-.row {
+.grid--row {
     padding-bottom: 7rem;
-    /*border-bottom: 1px solid lightgrey;*/
 }
-.row:first-child{
+.grid--row:first-child{
     margin: 0;
     padding-bottom: 2rem;
 }
-.container{
+.grid--wrapper{
     background-color: white;
 }
-.inline-nav {
+.nav--inline {
     background-color: lightgrey;
 }

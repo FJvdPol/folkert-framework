@@ -24,7 +24,7 @@ h5
     font-size: 1.05rem
 h6
     font-size: 1.005rem
-@media screen and (min-width: 640px)
+@media screen and (min-width: $screen--medium)
     h1
         font-size: 4rem
     h2
@@ -41,8 +41,7 @@ h6
 p,
 a
     margin: $margin
-p
-    font-size: 1em
+    font-size: 1rem
     font-weight: normal
 .center-text
     text-align: center
@@ -58,3 +57,6 @@ li
     li
         a
             text-decoration: underline
+@media screen and (max-width: $screen--small)
+    h1
+        text-align: center
