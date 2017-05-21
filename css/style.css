@@ -3,10 +3,13 @@
   margin: 0;
 }
 
+html {
+  background-color: #e1e1e1;
+}
+
 .grid--wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
 .center-col {
@@ -27,23 +30,38 @@ img {
 .grid--row {
   min-height: 20px;
   width: 100%;
-  padding: 0 calc(2rem / 6);
+  margin-bottom: 4rem;
+}
+.grid--row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+}
+
+header .grid--row {
+  padding-bottom: 0;
+}
+header .grid--row:last-child {
+  padding-bottom: 0;
 }
 
 .float-left {
   float: left;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem;
 }
 
 .float-right {
   float: right;
+  margin: 0 0.5rem;
 }
 
-.clearfix::before, .clearfix::after {
+.grid--row:before, .grid--row:after,
+.clearfix:before,
+.clearfix:after {
   display: table;
-  content: "";
+  content: " ";
 }
-.clearfix::after {
+.grid--row:after,
+.clearfix:after {
   clear: both;
 }
 
@@ -51,6 +69,7 @@ img {
   width: 100%;
   float: left;
   overflow: hidden;
+  padding: calc(2rem / 6);
 }
 
 .s-12 {
@@ -102,10 +121,6 @@ img {
 }
 
 @media screen and (min-width: 640px) {
-  .grid--row {
-    padding: 0 calc(2rem / 1.5);
-  }
-
   .m-12 {
     width: 100%;
   }
@@ -155,10 +170,6 @@ img {
   }
 }
 @media screen and (min-width: 960px) {
-  .grid--row {
-    padding: 0 2rem;
-  }
-
   .l-12 {
     width: 100%;
   }
@@ -308,7 +319,7 @@ li a {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
   h1 {
     text-align: center;
   }
@@ -320,6 +331,7 @@ header {
 .nav--responsive-sidebar,
 .nav--inline {
   padding: 2rem;
+  padding-left: 0;
 }
 .nav--responsive-sidebar ul,
 .nav--inline ul {
@@ -347,7 +359,26 @@ header {
   position: absolute;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+  }
+  header h1 {
+    text-align: center;
+  }
+
+  body {
+    padding-top: 50px;
+  }
+
+  .nav--responsive-sidebar,
+  .nav--inline {
+    padding: 2rem;
+  }
   .nav--responsive-sidebar ul li,
   .nav--inline ul li {
     -webkit-flex-basis: 100%;
@@ -358,7 +389,7 @@ header {
   }
 
   .nav--responsive-sidebar {
-    background-color: white;
+    background-color: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -399,18 +430,14 @@ header {
     z-index: 4;
   }
 
-  #nav--toggle:checked + .grid--wrapper {
-    height: 100vh;
-    overflow: hidden;
-  }
-  #nav--toggle:checked + .grid--wrapper .nav--responsive-sidebar {
+  #nav--toggle:checked + header .nav--responsive-sidebar {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
     pointer-events: all;
     opacity: 1;
   }
-  #nav--toggle:checked + .grid--wrapper .nav--responsive-sidebar::after {
+  #nav--toggle:checked + header .nav--responsive-sidebar::after {
     opacity: 1;
   }
 }
@@ -418,7 +445,6 @@ button,
 .button,
 a.button {
   appearance: none;
-  border: none;
   outline: none;
   font-size: 16px;
   padding: 0.5em 1.25em;
@@ -427,15 +453,25 @@ a.button {
           transition: all 250ms ease-in-out;
   cursor: pointer;
   text-align: center;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+button:hover,
+.button:hover,
+a.button:hover {
+  background-color: #fff;
+  color: #000;
 }
 button.button--material,
 .button.button--material,
 a.button.button--material {
   padding: 0.75em 2em;
+  border: none;
   border-radius: 3px;
   box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
   background-color: #2196F3;
-  color: white;
+  color: #fff;
 }
 button.button--material:hover,
 .button.button--material:hover,
@@ -450,20 +486,29 @@ button.button--material.button--round,
 a.button.button--material.button--round {
   border-radius: 50px;
 }
-button.button--material.button--round.button--to-straight:hover,
-.button.button--material.button--round.button--to-straight:hover,
-a.button.button--material.button--round.button--to-straight:hover {
+button.button--material.button--round.to-straight:hover,
+.button.button--material.button--round.to-straight:hover,
+a.button.button--material.button--round.to-straight:hover {
   border-radius: 3px;
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+  box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.25);
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
+  button,
+  .button {
+    display: block;
+  }
+
+  a.button {
+    display: inline-block;
+  }
+
   button,
   .button,
   a.button {
-    display: block;
     margin: 0.5rem auto;
   }
   button.button--material.button--round,
@@ -472,7 +517,88 @@ a.button.button--material.button--round.button--to-straight:hover {
     border-radius: 25px;
   }
 }
-.form--center input {
-  display: block;
+form {
+  width: 70%;
+  max-width: 300px;
+}
+
+input,
+textarea {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: calc(2rem / 3);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input,
+textarea,
+label,
+button.submit,
+input.button {
+  width: 100%;
+  margin: calc(0.5rem / 2) auto;
+  margin-bottom: calc(0.5rem * 2);
+}
+
+input.button,
+button.submit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form--center {
   margin: 0 auto;
+}
+
+.form--material label {
+  padding: 0 calc(2rem / 2.5);
+  color: #2196F3;
+  font-weight: bold;
+}
+.form--material input,
+.form--material textarea,
+.form--material button.submit {
+  border: none;
+  outline: none;
+  margin: 0.5rem;
+}
+.form--material input,
+.form--material textarea {
+  background-color: transparent;
+  border-bottom: 2px solid #2196F3;
+  color: #000;
+  margin-bottom: calc(0.5rem * 5);
+}
+.form--material input:focus,
+.form--material textarea:focus {
+  font-size: 1.02em;
+  box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
+}
+.form--material input.button,
+.form--material button.submit {
+  border-radius: 5px;
+  box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
+  background-color: #2196F3;
+  color: #fff;
+  font-weight: normal;
+  margin: 0.5rem;
+}
+.form--material input.button:hover,
+.form--material button.submit:hover {
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+  box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 420px) {
+  form {
+    margin: 0 auto;
+  }
+  form.form--material input.button,
+  form.form--material button.submit {
+    border-radius: 3px;
+  }
 }

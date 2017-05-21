@@ -1,13 +1,10 @@
-body {
-    background-color: goldenrod;
-}
-.grid--row {
+/*.grid--row {
     padding-bottom: 7rem;
 }
 .grid--row:first-child{
     margin: 0;
     padding-bottom: 2rem;
-}
+}*/
 .grid--wrapper{
     background-color: white;
 }

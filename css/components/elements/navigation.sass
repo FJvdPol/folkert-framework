@@ -3,6 +3,7 @@ header
 .#{$nav--prefix}#{$nav--responsive-sidebar},
 .#{$nav--prefix}#{$nav--inline-list}
     padding: $padding
+    padding-left: 0
     ul
         list-style-type: none
         padding: 0
@@ -19,15 +20,26 @@ header
     position: absolute
 
 @media screen and (max-width: $screen--small)
+    header
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        background-color: $color-white
+        h1
+            text-align: center
+    body
+        padding-top: 50px
     .#{$nav--prefix}#{$nav--responsive-sidebar},
     .#{$nav--prefix}#{$nav--inline-list}
+        padding: $padding
         ul
             li
                 flex-basis: 100%
                 text-align: center
                 margin: $margin
     .#{$nav--prefix}#{$nav--responsive-sidebar},
-        background-color: white
+        background-color: $color-white
         position: fixed
         top: 0
         left: 0
@@ -59,9 +71,7 @@ header
         display: block
         z-index: 4
     ##{$nav--prefix}#{$nav--responsive-sidebar-toggle}
-        &:checked + .#{$grid--prefix}#{$grid--wrapper}
-            height: 100vh
-            overflow: hidden
+        &:checked + header
             .#{$nav--prefix}#{$nav--responsive-sidebar}
                 transform: translateX(0)
                 pointer-events: all

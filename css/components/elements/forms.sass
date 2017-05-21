@@ -1,4 +1,65 @@
+form
+    width: 70%
+    max-width: 300px
+input,
+textarea
+    appearance: none
+    border: 1px solid rgba(0,0,0,0.4)
+    background-color: rgba(0,0,0,0.1)
+    padding: calc(#{$padding} / 3)
+    font-family: inherit
+    font-size: 1rem
+input,
+textarea,
+label,
+button.submit,
+input.button
+    width: 100%
+    margin: calc(#{$margin} / 2) auto
+    margin-bottom: calc(#{$margin} * 2)
+input.button,
+button.submit
+    padding-top: 10px
+    padding-bottom: 10px
 .form--center
-    input
-        display: block
+    margin: 0 auto
+
+.form--material
+    label
+        padding: 0 calc(#{$padding} / 2.5)
+        color: $color-material-blue
+        font-weight: bold
+    input,
+    textarea,
+    button.submit
+        border: none
+        outline: none
+        margin: $margin
+    input,
+    textarea
+        background-color: transparent
+        border-bottom: 2px solid $color-material-blue
+        color: $color-black
+        margin-bottom: calc(#{$margin} * 5)
+        &:focus
+            font-size: 1.02em
+            box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.3)
+    input.button,
+    button.submit
+        border-radius: 5px
+        box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.3)
+        background-color: #2196F3
+        color: $color-white
+        font-weight: normal
+        margin: $margin
+        &:hover
+            transform: translateY(-1px)
+            box-shadow: 0px 4px 3px -1px rgba(0,0,0,0.25)
+
+@media screen and (max-width: $screen--small)
+    form
         margin: 0 auto
+        &.form--material
+            input.button,
+            button.submit
+                border-radius: 3px

@@ -1,20 +1,31 @@
+// Default colors
+$color-material-blue: #2196F3
+$color-black: #000
+$color-white: #fff
+
 // Default font properties of the whole page (declares what 1rem is)
 $font: Roboto
 $font-size: 16px
-$text-color: #000
+$text-color: $color-black
+
+// Default html background-color
+$html-background-color: #e1e1e1
+
 // Default margin and padding for most elements
 $margin: 0.5rem
 $padding: 2rem
 
-// Default body background-color
-$background-color: crimson
+// how far rows should be apart
+$grid--row-margin-bottom: 4rem
+
+
 
 
 // Size of responsive Grid Media Queries:
 // everything below the value of $medium = small
 // value of $min decides under what value everything should be full screen width
 $screen--min: 300px
-$screen--small: 360px
+$screen--small: 420px
 $screen--medium: 640px
 $screen--large: 960px
 
@@ -46,6 +57,12 @@ $nav--responsive-sidebar: "responsive-sidebar"
 $nav--responsive-sidebar-toggle: "toggle"
 $nav--responsive-sidebar-toggle-icon: "toggle-icon"
 
+
+// Button selectors ---------------------------------------------------------------------
+$button--prefix: "button--"
+$button--material: "material"
+$button--material--round: "round"
+$button--material--round--to-straight: "to-straight"
 
 
 // Files ===================================================================================

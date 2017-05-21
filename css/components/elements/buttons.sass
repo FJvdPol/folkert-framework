@@ -2,7 +2,6 @@ button,
 .button,
 a.button
     appearance: none
-    border: none
     outline: none
     font-size: $font-size
     padding: 0.5em 1.25em
@@ -10,27 +9,39 @@ a.button
     transition: all 250ms ease-in-out
     cursor: pointer
     text-align: center
-    &.button--material
+    background-color: $color-black
+    color: $color-white
+    border: 1px solid $color-black
+    &:hover
+        background-color: $color-white
+        color: $color-black
+    &.#{$button--prefix}#{$button--material}
         padding: 0.75em 2em
+        border: none
         border-radius: 3px
         box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.3)
         background-color: #2196F3
-        color: white
+        color: $color-white
         &:hover
             transform: translateY(-1px)
             box-shadow: 0px 4px 3px -1px rgba(0,0,0,0.25)
-        &.button--round
+        &.#{$button--prefix}#{$button--material--round}
             border-radius: 50px
-            &.button--to-straight
+            &.#{$button--material--round--to-straight}
                 &:hover
                     border-radius: 3px
-                    transform: none
+                    transform: translateY(-1px)
+                    box-shadow: 0px 4px 3px -1px rgba(0,0,0,0.25)
 @media screen and (max-width: $screen--small)
+    button,
+    .button
+        display: block
+    a.button
+        display: inline-block
     button,
     .button,
     a.button
-        display: block
         margin: $margin auto
-        &.button--material
-            &.button--round
+        &.#{$button--prefix}#{$button--material}
+            &.#{$button--prefix}#{$button--material--round}
                 border-radius: 25px
