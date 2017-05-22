@@ -1,16 +1,3 @@
-*
-    box-sizing: border-box
-    margin: 0
-html
-    background-color: $html-background-color
-.#{$grid--prefix}#{$grid--wrapper}
-    max-width: $grid--wrapper-width
-    margin: 0 auto
-.center-col
-    display: flex
-    justify-content: center
-img
-    max-width: 100%
 .#{$grid--prefix}#{$grid--row}
     min-height: 20px
     width: 100%
@@ -23,14 +10,7 @@ header
         padding-bottom: 0
         &:last-child
             padding-bottom: 0
-.float-left
-    float: left
-    margin: 0 $margin
-.float-right
-    float: right
-    margin: 0 $margin
-.#{$grid--prefix}#{$grid--row},
-.clearfix
+.#{$grid--prefix}#{$grid--row}
     &:before,
     &:after
         display: table

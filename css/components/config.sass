@@ -50,6 +50,14 @@ $grid--wrapper: "wrapper"
 // Default container width
 $grid--wrapper-width: 1080px
 
+// New Grid selectors (default syntax: [prefix][row], [prefix][col][screen+size])
+// Example: ngrid--row, ngrid--col-s1
+$newgrid--prefix: "ngrid--"
+$newgrid--row: "row"
+$newgrid--col: "columns"
+
+
+
 // Nav selectors --------------------------------------------------------------------------
 $nav--prefix: "nav--"
 $nav--inline-list: "inline"
@@ -68,7 +76,9 @@ $button--material--round--to-straight: "to-straight"
 // Files ===================================================================================
 // Remove any files you don't want to use
 // =======================================================================================
-@import grid
+@import grid--base
+@import grid--float
+@import grid--display-grid
 @import typography
 @import elements/navigation
 @import elements/buttons

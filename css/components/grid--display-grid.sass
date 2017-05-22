@@ -1,0 +1,142 @@
+@supports (display: grid)
+    .center-content
+        justify-items: center
+    .center
+        justify-self: center
+    .#{$newgrid--prefix}#{$newgrid--row}
+        display: grid
+        grid-gap: 10px
+        margin-bottom: calc(#{$margin} * 3)
+        > *
+            padding: calc(#{$padding} / 3)
+    header
+        .#{$newgrid--prefix}#{$newgrid--row}
+            padding-bottom: 0
+            &:last-child
+                padding-bottom: 0
+    @media screen and (min-width: $screen--min)
+        .#{$newgrid--prefix}#{$newgrid--row}
+            &.#{$newgrid--prefix}#{$newgrid--col}-s1
+                grid-template-columns: 1fr
+            &.#{$newgrid--prefix}#{$newgrid--col}-s2
+                grid-template-columns: repeat(2, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-s3
+                grid-template-columns: repeat(3, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-s4
+                grid-template-columns: repeat(4, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-s5
+                grid-template-columns: repeat(5, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-s6
+                grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-s2
+            &.start-1
+                grid-column: 1 / span 2
+            &.start-2
+                grid-column: 2 / span 2
+            &.start-3
+                grid-column: 3 / span 2
+            &.start-4
+                grid-column: 4 / span 2
+            &.start-5
+                grid-column: 5 / span 2
+        .#{$newgrid--prefix}span-s3
+            &.start-1
+                grid-column: 1 / span 3
+            &.start-2
+                grid-column: 2 / span 3
+            &.start-3
+                grid-column: 3 / span 3
+            &.start-4
+                grid-column: 4 / span 3
+        .#{$newgrid--prefix}span-s4
+            &.start-1
+                grid-column: 1 / span 4
+            &.start-2
+                grid-column: 2 / span 4
+            &.start-3
+                grid-column: 3 / span 4
+    @media screen and (min-width: $screen--medium)
+        .#{$newgrid--prefix}#{$newgrid--row}
+            &.#{$newgrid--prefix}#{$newgrid--col}-m1
+                grid-template-columns: 1fr
+            &.#{$newgrid--prefix}#{$newgrid--col}-m2
+                grid-template-columns: repeat(2, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-m3
+                grid-template-columns: repeat(3, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-m4
+                grid-template-columns: repeat(4, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-m5
+                grid-template-columns: repeat(5, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-m6
+                grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-m2
+            &.start-1
+                grid-column: 1 / span 2
+            &.start-2
+                grid-column: 2 / span 2
+            &.start-3
+                grid-column: 3 / span 2
+            &.start-4
+                grid-column: 4 / span 2
+            &.start-5
+                grid-column: 5 / span 2
+        .#{$newgrid--prefix}span-m3
+            &.start-1
+                grid-column: 1 / span 3
+            &.start-2
+                grid-column: 2 / span 3
+            &.start-3
+                grid-column: 3 / span 3
+            &.start-4
+                grid-column: 4 / span 3
+        .#{$newgrid--prefix}span-m4
+            &.start-1
+                grid-column: 1 / span 4
+            &.start-2
+                grid-column: 2 / span 4
+            &.start-3
+                grid-column: 3 / span 4
+    @media screen and (min-width: $screen--large)
+        .#{$newgrid--prefix}#{$newgrid--row}
+            &.#{$newgrid--prefix}#{$newgrid--col}-l1
+                grid-template-columns: 1fr
+            &.#{$newgrid--prefix}#{$newgrid--col}-l2
+                grid-template-columns: repeat(2, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-l3
+                grid-template-columns: repeat(3, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-l4
+                grid-template-columns: repeat(4, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-l5
+                grid-template-columns: repeat(5, 1fr)
+            &.#{$newgrid--prefix}#{$newgrid--col}-l6
+                grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-l2
+            &.start-1
+                grid-column: 1 / span 2
+            &.start-2
+                grid-column: 2 / span 2
+            &.start-3
+                grid-column: 3 / span 2
+            &.start-4
+                grid-column: 4 / span 2
+            &.start-5
+                grid-column: 5 / span 2
+        .#{$newgrid--prefix}span-l3
+            &.start-1
+                grid-column: 1 / span 3
+            &.start-2
+                grid-column: 2 / span 3
+            &.start-3
+                grid-column: 3 / span 3
+            &.start-4
+                grid-column: 4 / span 3
+        .#{$newgrid--prefix}span-l4
+            &.start-1
+                grid-column: 1 / span 4
+            &.start-2
+                grid-column: 2 / span 4
+            &.start-3
+                grid-column: 3 / span 4
+    @media screen and (max-width: $screen--min)
+        .#{$newgrid--prefix}#{$newgrid--row}
+            grid-template-columns: 1fr

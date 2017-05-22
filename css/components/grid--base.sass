@@ -1,0 +1,26 @@
+*
+    box-sizing: border-box
+    margin: 0
+html
+    background-color: $html-background-color
+.#{$grid--prefix}#{$grid--wrapper}
+    max-width: $grid--wrapper-width
+    margin: 0 auto
+.center-col
+    display: flex
+    justify-content: center
+img
+    max-width: 100%
+.float-left
+    float: left
+    margin: 0 $margin
+.float-right
+    float: right
+    margin: 0 $margin
+.clearfix
+    &:before,
+    &:after
+        display: table
+        content: " "
+    &:after
+        clear: both
