@@ -1,23 +1,23 @@
-// Default colors
+// =======================================================================================
+// CONFIG FILE
+// You can change alot of aspects of the framework by changing the values of these variables.
+// =======================================================================================
+
+
+// Variables for default colors
 $color-material-blue: #2196F3
 $color-black: #000
 $color-white: #fff
 
-// Default font properties of the whole page (declares what 1rem is)
+// Variables for default font properties of the whole page (declares what 1rem is)
 $font: Roboto
 $font-size: 16px
 $text-color: $color-black
 
-// Default html background-color
-$html-background-color: #e1e1e1
 
-// Default margin and padding for most elements
+// Variable for default margin and padding for most elements
 $margin: 0.5rem
 $padding: 2rem
-
-// how far rows should be apart
-$grid--row-margin-bottom: 4rem
-
 
 
 
@@ -33,15 +33,18 @@ $screen--large: 960px
 
 
 
-// Selector names ==========================================================================
-// Here you can change the names of the selectors
+// =======================================================================================
+// CHANGE CLASS NAMES
+// Here you can change the names of (parts) of a few of the classes this framework uses.
 // =======================================================================================
 
 // Grid selectors ----------------------------------------------------------------------------
 $grid--prefix: "grid--"
 $grid--row: "row"
 $grid--col: "col"
-//these three default to: grid--row and grid--col
+// these three default to: grid--row and grid--col
+// Variable that declares how far rows from the float grid should be apart
+$grid--row-margin-bottom: 4rem
 
 // Wrapper - defines max-width of element that it is applied to
 $grid--wrapper: "wrapper"
@@ -76,10 +79,10 @@ $button--material--round--to-straight: "to-straight"
 // Files ===================================================================================
 // Remove any files you don't want to use
 // =======================================================================================
-@import grid--base
-@import grid--float
-@import grid--display-grid
-@import typography
-@import elements/navigation
-@import elements/buttons
-@import elements/forms
+@import components/grid--base
+@import components/grid--float
+@import components/grid--display-grid
+@import components/typography
+@import components/elements/navigation
+@import components/elements/buttons
+@import components/elements/forms
