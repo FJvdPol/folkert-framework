@@ -7,7 +7,10 @@
         display: grid
         grid-gap: 10px
         margin-bottom: calc(#{$margin} * 3)
-        > *
+        > div,
+        > section,
+        > article,
+        > aside
             padding: calc(#{$padding} / 3)
     header
         .#{$newgrid--prefix}#{$newgrid--row}
@@ -28,6 +31,19 @@
                 grid-template-columns: repeat(5, 1fr)
             &.#{$newgrid--prefix}#{$newgrid--col}-s6
                 grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-s1
+            &.start-1
+                grid-column: 1 / span 1
+            &.start-2
+                grid-column: 2 / span 1
+            &.start-3
+                grid-column: 3 / span 1
+            &.start-4
+                grid-column: 4 / span 1
+            &.start-5
+                grid-column: 5 / span 1
+            &.start-6
+                grid-column: 6 / span 1
         .#{$newgrid--prefix}span-s2
             &.start-1
                 grid-column: 1 / span 2
@@ -69,6 +85,19 @@
                 grid-template-columns: repeat(5, 1fr)
             &.#{$newgrid--prefix}#{$newgrid--col}-m6
                 grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-m1
+            &.start-1
+                grid-column: 1 / span 1
+            &.start-2
+                grid-column: 2 / span 1
+            &.start-3
+                grid-column: 3 / span 1
+            &.start-4
+                grid-column: 4 / span 1
+            &.start-5
+                grid-column: 5 / span 1
+            &.start-6
+                grid-column: 6 / span 1
         .#{$newgrid--prefix}span-m2
             &.start-1
                 grid-column: 1 / span 2
@@ -110,6 +139,19 @@
                 grid-template-columns: repeat(5, 1fr)
             &.#{$newgrid--prefix}#{$newgrid--col}-l6
                 grid-template-columns: repeat(6, 1fr)
+        .#{$newgrid--prefix}span-l1
+            &.start-1
+                grid-column: 1 / span 1
+            &.start-2
+                grid-column: 2 / span 1
+            &.start-3
+                grid-column: 3 / span 1
+            &.start-4
+                grid-column: 4 / span 1
+            &.start-5
+                grid-column: 5 / span 1
+            &.start-6
+                grid-column: 6 / span 1
         .#{$newgrid--prefix}span-l2
             &.start-1
                 grid-column: 1 / span 2

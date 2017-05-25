@@ -1,20 +1,30 @@
 button,
 .button,
 a.button
+    margin-top: $margin
+    display: inline-block
     appearance: none
     outline: none
+    text-decoration: none
     font-size: $font-size
     padding: 0.5em 1.25em
     margin: $margin
-    transition: all 250ms ease-in-out
+    transition: all 200ms ease-in-out
     cursor: pointer
     text-align: center
-    background-color: $color-black
-    color: $color-white
+    background-color: $color-white
+    color: $color-black
     border: 1px solid $color-black
     &:hover
-        background-color: $color-white
-        color: $color-black
+        background-color: $color-black
+        color: $color-white
+    &.#{$button--prefix}#{$button--inverted}
+        background-color: $color-black
+        color: $color-white
+        border: 1px solid $color-black
+        &:hover
+            background-color: $color-white
+            color: $color-black
     &.#{$button--prefix}#{$button--material}
         padding: 0.75em 2em
         border: none
@@ -37,11 +47,12 @@ a.button
     .button
         display: block
     a.button
-        display: inline-block
+        display: table
     button,
     .button,
     a.button
-        margin: $margin auto
+        margin-top: calc(#{$margin} * 2)
+        margin-bottom: calc(#{$margin} * 2)
         &.#{$button--prefix}#{$button--material}
             &.#{$button--prefix}#{$button--material--round}
                 border-radius: 25px

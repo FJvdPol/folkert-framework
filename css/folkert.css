@@ -570,18 +570,11 @@ header {
 
 @media screen and (max-width: 420px) {
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     background-color: #fff;
   }
   header h1 {
     text-align: center;
-  }
-
-  body {
-    padding-top: 50px;
   }
 
   .nav--responsive-sidebar,

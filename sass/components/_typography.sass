@@ -8,9 +8,15 @@ h3,
 h4,
 h5,
 h6
+    font-weight: normal
     color: inherit
-    font-weight: bold
+    margin: 0 $margin
+    padding-top: $padding
+h1,
+h2,
+h3
     margin: $margin
+    padding-top: $padding
 h1
     font-size: 2.5rem
 h2
@@ -24,39 +30,92 @@ h5
     font-size: 1.05rem
 h6
     font-size: 1.005rem
+p,
+a
+    font-size: 1rem
+    font-weight: normal
+p
+    margin: $margin
+.center-text
+    text-align: center
+.bold-text
+    font-weight: bold
+.dim-text
+    color: lighten($text-color, 30)
+.warning-text
+    color: $warning-color
+.list-no-decoration
+    list-style-type: none
+    padding: 0
+    margin: $margin
+.list-centered
+    display: flex
+    flex-direction: column
+    justify-content: center
+.inline-list
+    display: flex
+    li
+        margin-left: $margin
+        margin-right: $margin
+        &:first-child
+            margin-left: 0
+.inline-list,
+.list-centered
+    li
+        text-align: center
+        a
+            text-align: center
+a,
+a:visited
+    color: $text-color
+a:hover
+    color: lighten($text-color, 30)
+nav
+    li
+        a
+            text-decoration: none
+.underline
+    li
+        a
+            text-decoration: underline
 @media screen and (min-width: $screen--medium)
     h1
         font-size: 4rem
     h2
         font-size: 2rem
     h3
-        font-size: 1.4rem
-        font-weight: bold
+        font-size: 1.6rem
     h4
         font-size: 1.3rem
     h5
         font-size: 1.2rem
     h6
         font-size: 1.1rem
-p,
-a
-    margin: $margin
-    font-size: 1rem
-    font-weight: normal
-.center-text
-    text-align: center
-a,
-a:visited
-    color: $text-color
-a:hover
-    color: lighten($text-color, 30)
-li
-    a
-        text-decoration: none
-.underline
-    li
-        a
-            text-decoration: underline
 @media screen and (max-width: $screen--small)
     h1
         text-align: center
+        font-size: 10vw
+    h2
+        font-size: 8vw
+    h3
+        font-size: 6.5vw
+    h4
+        font-size: 5.5vw
+    h5
+        font-size: 5vw
+    h6
+        font-size: 4.5vw
+@media screen and (max-width: $screen--min)
+    h1
+        text-align: center
+        font-size: 12vw
+    h2
+        font-size: 10vw
+    h3
+        font-size: 8vw
+    h4
+        font-size: 7vw
+    h5
+        font-size: 5vw
+    h6
+        font-size: 4vw

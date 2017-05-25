@@ -1,9 +1,13 @@
 header
     overflow: hidden
+    h1
+        padding-top: 0
 .#{$nav--prefix}#{$nav--responsive-sidebar},
 .#{$nav--prefix}#{$nav--inline-list}
     padding: $padding
-    padding-left: 0
+    padding-top: calc(#{$padding / 2})
+    padding-left: calc(#{$padding} / 3)
+    margin-left: $margin
     ul
         list-style-type: none
         padding: 0
@@ -11,6 +15,13 @@ header
         flex-wrap: wrap
         li
             margin: 0 $margin
+            margin-left: 0
+            a
+                text-align: left
+                margin-left: 0
+                margin-right: $margin
+.active-tab
+    background-color: lighten($text-color, 90)
 ##{$nav--prefix}#{$nav--responsive-sidebar-toggle},
 ##{$nav--prefix}#{$nav--responsive-sidebar-toggle-icon}
     display: none
@@ -18,18 +29,20 @@ header
     font-weight: bold
     margin: $margin
     position: absolute
+    top: 0
+    left: 0
 
 @media screen and (max-width: $screen--small)
     header
-        position: fixed
-        top: 0
-        left: 0
         width: 100%
         background-color: $color-white
         h1
             text-align: center
-    body
-        padding-top: 50px
+    ##{$nav--prefix}#{$nav--responsive-sidebar-toggle} + header
+        padding-left: 40px
+        padding-right: 40px
+    ##{$nav--prefix}#{$nav--responsive-sidebar-toggle}
+        padding: 0
     .#{$nav--prefix}#{$nav--responsive-sidebar},
     .#{$nav--prefix}#{$nav--inline-list}
         padding: $padding
@@ -50,11 +63,13 @@ header
         pointer-events: none
         opacity: 0
         transition: transform 250ms ease-out
-
+        margin: 0
         ul
             margin-top: 20%
             li
                 margin: calc(#{$margin} * 3)
+                a
+                    margin: 0
         &::after
             position: fixed
             top: 0
@@ -69,6 +84,7 @@ header
             transition: all 250ms ease-out
     ##{$nav--prefix}#{$nav--responsive-sidebar-toggle-icon}
         display: block
+        width: 30px
         z-index: 4
     ##{$nav--prefix}#{$nav--responsive-sidebar-toggle}
         &:checked + header
