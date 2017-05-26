@@ -35,6 +35,10 @@ Current version: 1.0
 
 * **Folkert-Jan** - [FJvdPol](https://github.com/fjvdpol)
 
+## Time spent
+* From 13th of april 2017 till 26th of may 2017
+* Amount of hours: 41
+
 ## Inspiration
 
 * Zurb Foundation Framework - https://foundation.zurb.com/
