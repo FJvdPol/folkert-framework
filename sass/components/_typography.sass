@@ -11,7 +11,7 @@ h6
     font-weight: normal
     color: inherit
     margin: 0 $margin
-    padding-top: $padding
+    padding-top: calc(#{$padding} / 4)
 h1,
 h2,
 h3
@@ -54,6 +54,7 @@ p
     justify-content: center
 .inline-list
     display: flex
+    flex-wrap: wrap
     li
         margin-left: $margin
         margin-right: $margin
@@ -105,6 +106,11 @@ nav
         font-size: 5vw
     h6
         font-size: 4.5vw
+    .list-centered,
+    .inline-list
+        li
+            width: 100%
+            margin: calc(#{$margin} * 2)
 @media screen and (max-width: $screen--min)
     h1
         text-align: center
