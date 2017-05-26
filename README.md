@@ -1,7 +1,7 @@
 # Folkert Framework
 
 The past few weeks i've been developing a responsive css framework for a school project. It is in no way perfect, but it can be used for a few cool things.
-It features 2 grid systems, one based on floats and one based on the newly supported display: grid. This new grid is not fully supported yet on a few browser though, so be careful using it.
+It features 2 grid systems, one based on floats and one based on the newly supported display: grid. This new grid is not fully supported yet on a few browsers though, so be careful using it.
 
 ### Motivation
 
