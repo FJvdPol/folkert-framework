@@ -19,9 +19,8 @@ http://fjvdpol.github.io/frameworkdisplay
 
 If you want to easily edit default styles and class names, you should have SASS installed. In that case, it's also wise to download the SASS folder from the project.
 
-```
-SASS for editing config.sass file
-```
+* SASS for editing config.sass file
+
 
 ## Built With
 
