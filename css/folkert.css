@@ -862,7 +862,6 @@ header h1 {
     opacity: 1;
   }
 }
-button,
 .button,
 a.button {
   margin-top: 0.5rem;
@@ -881,26 +880,22 @@ a.button {
   color: #000;
   border: 1px solid #000;
 }
-button:hover,
 .button:hover,
 a.button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: black;
+  color: white;
 }
-button.button--inverted,
 .button.button--inverted,
 a.button.button--inverted {
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #000;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
 }
-button.button--inverted:hover,
 .button.button--inverted:hover,
 a.button.button--inverted:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
 }
-button.button--material,
 .button.button--material,
 a.button.button--material {
   padding: 0.75em 2em;
@@ -910,7 +905,6 @@ a.button.button--material {
   background-color: #2196F3;
   color: #fff;
 }
-button.button--material:hover,
 .button.button--material:hover,
 a.button.button--material:hover {
   -webkit-transform: translateY(-1px);
@@ -918,12 +912,10 @@ a.button.button--material:hover {
           transform: translateY(-1px);
   box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.25);
 }
-button.button--material.button--round,
 .button.button--material.button--round,
 a.button.button--material.button--round {
   border-radius: 50px;
 }
-button.button--material.button--round.button--to-straight:hover,
 .button.button--material.button--round.button--to-straight:hover,
 a.button.button--material.button--round.button--to-straight:hover {
   border-radius: 3px;
@@ -934,7 +926,6 @@ a.button.button--material.button--round.button--to-straight:hover {
 }
 
 @media screen and (max-width: 420px) {
-  button,
   .button {
     display: block;
   }
@@ -943,25 +934,22 @@ a.button.button--material.button--round.button--to-straight:hover {
     display: table;
   }
 
-  button,
   .button,
   a.button {
     margin-top: calc(0.5rem * 2);
     margin-bottom: calc(0.5rem * 2);
   }
-  button.button--center-s,
   .button.button--center-s,
   a.button.button--center-s {
     margin-left: auto;
     margin-right: auto;
   }
-  button.button--material.button--round,
   .button.button--material.button--round,
   a.button.button--material.button--round {
     border-radius: 25px;
   }
 }
-form {
+.form--default {
   width: 70%;
   max-width: 300px;
   margin: 0.5rem;
@@ -981,7 +969,7 @@ textarea {
 input,
 textarea,
 label,
-button.submit,
+button.button.submit,
 input.button {
   width: 100%;
   margin: calc(0.5rem / 2) auto;
@@ -989,7 +977,7 @@ input.button {
 }
 
 input.button,
-button.submit {
+button.button.submit {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -1005,7 +993,7 @@ button.submit {
 }
 .form--material input,
 .form--material textarea,
-.form--material button.submit {
+.form--material button.button.submit {
   border: none;
   outline: none;
   margin: 0.5rem;
@@ -1023,7 +1011,7 @@ button.submit {
   box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
 }
 .form--material input.button,
-.form--material button.submit {
+.form--material button.button.submit {
   border-radius: 5px;
   box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.3);
   background-color: #2196F3;
@@ -1032,7 +1020,7 @@ button.submit {
   margin: 0.5rem;
 }
 .form--material input.button:hover,
-.form--material button.submit:hover {
+.form--material button.button.submit:hover {
   -webkit-transform: translateY(-1px);
       -ms-transform: translateY(-1px);
           transform: translateY(-1px);
@@ -1045,7 +1033,7 @@ button.submit {
     margin-bottom: calc(0.5rem * 3);
   }
   form.form--material input.button,
-  form.form--material button.submit {
+  form.form--material button.button.submit {
     border-radius: 3px;
   }
 }
