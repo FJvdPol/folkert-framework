@@ -31,8 +31,8 @@ If you want to easily edit default styles and class names, you should have SASS 
 
 Current version: 1.1
 
-version 1.1: Changed the framework to listen to classes for default buttons and forms instead of the elements form and button
-version 1.0: Start version
+* version 1.1: Changed the framework to listen to classes for default buttons and forms instead of the elements form and button.
+* version 1.0: Finished up the framework
 
 ## Authors
 
